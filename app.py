@@ -23,8 +23,11 @@ mecanismos.
 - Top Trading Cycles (TTC)
 - Serial Dictatorship
 - Kidney Exchange
+- House Allocation (mercado de casas, Shapley-Scarf)
 
 **Planeado:**
+- Comparador (todos los mecanismos sobre el mismo problema)
+- Manipulación interactiva (jugar a mentir tus preferencias)
 - Simulación masiva / evaluación de mecanismos a escala
 """
 )
