@@ -19,7 +19,7 @@ def parse_pref_list(text: str) -> list[str]:
 
 with tab_sim:
     st.markdown(
-        "Mismo tipo de problema que en los otros mecanismos, pero acá los "
+        "Mismo tipo de problema que en los otros mecanismos, pero aquí los "
         "estudiantes y colegios **intercambian lugares en ciclos** en vez "
         "de proponer y aceptar."
     )
@@ -96,8 +96,8 @@ with tab_sim:
 
         st.info(
             "TTC prioriza la eficiencia de Pareto por sobre la estabilidad: "
-            "compará este resultado con el de Deferred Acceptance sobre las "
-            "mismas preferencias — puede que acá alguien mejore, pero el "
+            "compara este resultado con el de Deferred Acceptance sobre las "
+            "mismas preferencias — puede que aquí alguien mejore, pero el "
             "matching deje de ser estable."
         )
 

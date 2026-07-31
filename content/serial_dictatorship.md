@@ -28,8 +28,8 @@ pueda rechazarlo).
 - **Strategy-proof**: siempre. Como cada estudiante elige lo mejor
   disponible en su momento, no hay ninguna ventaja en mentir sobre las
   preferencias.
-- **Estabilidad**: acá depende de un supuesto. Serial Dictatorship no tiene
-  noción de "prioridad del colegio" propia — pero si tratás el **mismo
+- **Estabilidad**: aquí depende de un supuesto. Serial Dictatorship no tiene
+  noción de "prioridad del colegio" propia — pero si tratas el **mismo
   orden global** como si fuera la prioridad de todos los colegios por
   igual, el resultado **sí es estable** respecto a esa prioridad. De hecho,
   en ese caso especial, Serial Dictatorship, TTC y Deferred Acceptance
@@ -64,5 +64,5 @@ turnos de elección en una liga deportiva (draft).
 El ejemplo por defecto usa el mismo orden (E1, E2, E3) como prioridad y las
 mismas preferencias que la página de Deferred Acceptance. Vas a ver que da
 exactamente el mismo resultado (E1→C1, E2→C2, E3→C3) — y que el simulador
-lo marca como estable. Probá cambiar el orden de prioridad y ver cómo
+lo marca como estable. Prueba cambiar el orden de prioridad y ver cómo
 cambia el resultado.

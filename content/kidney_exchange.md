@@ -32,7 +32,7 @@ extensión del mismo problema que no vas a encontrar en este simulador.)
 
 ### El objetivo del mecanismo
 
-Acá el objetivo no es "estabilidad" ni "eficiencia de Pareto" en el sentido
+Aquí el objetivo no es "estabilidad" ni "eficiencia de Pareto" en el sentido
 de las páginas anteriores — es más directo: **maximizar la cantidad de
 parejas que consiguen un trasplante**, eligiendo un conjunto de ciclos que
 no compartan ninguna pareja entre sí (cada pareja participa, como mucho,

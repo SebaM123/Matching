@@ -97,7 +97,7 @@ with tab_sim:
         st.info(
             "Con el ejemplo por defecto, deberías ver un matching inestable: "
             "E2 y C2 se prefieren mutuamente por sobre su asignación final. "
-            "Compará este resultado con el de Deferred Acceptance sobre las "
+            "Compara este resultado con el de Deferred Acceptance sobre las "
             "mismas preferencias."
         )
 

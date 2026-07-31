@@ -19,7 +19,7 @@ def parse_pref_list(text: str) -> list[str]:
 
 with tab_sim:
     st.markdown(
-        "Acá no hay prioridades por colegio: hay un único **orden de "
+        "Aquí no hay prioridades por colegio: hay un único **orden de "
         "prioridad** entre los estudiantes, y cada uno elige por turno el "
         "colegio que más prefiere entre los que quedan con cupo."
     )

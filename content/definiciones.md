@@ -1,7 +1,7 @@
 ## Glosario
 
 Conceptos transversales a todos los mecanismos del portal. Cada página de
-mecanismo explica lo específico de ese algoritmo; acá está lo que se repite
+mecanismo explica lo específico de ese algoritmo; aquí está lo que se repite
 en todos.
 
 ### Matching

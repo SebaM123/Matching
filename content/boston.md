@@ -43,7 +43,7 @@ Esa diferencia, aparentemente pequeña, rompe la estabilidad.
 ### Para explorar en el simulador
 
 El ejemplo por defecto usa la **misma prioridad** (E1 > E2 > E3) en los tres
-colegios — un caso realista de "prioridad por mérito único". Fijate que:
+colegios — un caso realista de "prioridad por mérito único". Nota que:
 
 - E2 pone C1 como primera opción (su verdadera preferencia), pero pierde
   esa carrera contra E1.
@@ -53,5 +53,5 @@ colegios — un caso realista de "prioridad por mérito único". Fijate que:
   "cambiar" con E3, ambos habrían preferido eso. Ese es exactamente el par
   bloqueante que el simulador te va a marcar: el resultado es inestable.
 
-Compará esto con lo que hace DA sobre las mismas preferencias (pestaña
+Compara esto con lo que hace DA sobre las mismas preferencias (pestaña
 anterior) — ahí ese problema no aparece.

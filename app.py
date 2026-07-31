@@ -7,12 +7,12 @@ st.markdown(
     """
 Portal de estudio y simulación de **teoría de matching y market design**.
 
-Definí un problema (por ejemplo, estudiantes y colegios con sus
-preferencias), corré distintos mecanismos de asignación, y explorá sus
+Define un problema (por ejemplo, estudiantes y colegios con sus
+preferencias), ejecuta distintos mecanismos de asignación, y explora sus
 propiedades — estabilidad, optimalidad, incentivos a decir la verdad.
 
-Elegí una sección en el menú de la izquierda para empezar. Si es tu primera
-vez, arrancá por **Motivación** y **Definiciones** antes de meterte en los
+Elige una sección en el menú de la izquierda para empezar. Si es tu primera
+vez, comienza por **Motivación** y **Definiciones** antes de meterte en los
 mecanismos.
 
 **Disponible hoy:**

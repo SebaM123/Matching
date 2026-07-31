@@ -6,7 +6,7 @@ muchísimos mercados donde **usar precios no es posible, no es legal, o la
 sociedad lo considera moralmente inaceptable**. Ahí es donde entra el
 diseño de mercado (*market design*) y, en particular, la teoría de matching.
 
-Pensá en estos casos:
+Piensa en estos casos:
 
 - **Órganos para trasplante.** En casi todos los países está prohibido
   comprar y vender riñones. No podemos dejar que el precio asigne los

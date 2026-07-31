@@ -18,7 +18,7 @@ def parse_list(text: str) -> list[str]:
 
 with tab_sim:
     st.markdown(
-        "Cada pareja paciente-donante es incompatible entre sí. Definí "
+        "Cada pareja paciente-donante es incompatible entre sí. Define "
         "**con el donante de qué otras parejas es compatible el paciente "
         "de cada una**, y el simulador busca ciclos de intercambio."
     )
@@ -79,7 +79,7 @@ with tab_sim:
                 st.write("No se encontró ningún ciclo con el largo máximo permitido.")
 
         st.info(
-            "Probá bajar el largo máximo de ciclo a 2 con el ejemplo por "
+            "Prueba bajar el largo máximo de ciclo a 2 con el ejemplo por "
             "defecto: la compatibilidad circular de 3 parejas desaparece "
             "por completo, aunque la compatibilidad siga existiendo."
         )

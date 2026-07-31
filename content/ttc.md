@@ -35,7 +35,7 @@ opciones disponibles.
   otro empeore. Esto **no** está garantizado en Deferred Acceptance.
 - **Strategy-proofness**: a ningún estudiante le conviene mentir sobre sus
   preferencias. En esto es igual a DA (con estudiantes proponiendo).
-- **No garantiza estabilidad**: acá está el costo. TTC puede dejar pares
+- **No garantiza estabilidad**: aquí está el costo. TTC puede dejar pares
   bloqueantes — un estudiante y un colegio que se preferirían mutuamente
   por sobre su asignación final. Es el precio que paga por priorizar
   eficiencia sobre estabilidad.
@@ -68,6 +68,6 @@ El ejemplo por defecto está armado a propósito para mostrar el trade-off:
 - E2 termina igual en los dos mecanismos (C3).
 
 Es decir: **nadie empeora, y dos estudiantes mejoran** — una mejora de
-Pareto estricta sobre DA. Pero fijate qué dice el simulador sobre
+Pareto estricta sobre DA. Pero observa qué dice el simulador sobre
 estabilidad del resultado de TTC: aparece un par bloqueante. Ese es
 exactamente el costo del que habla la tabla de arriba.

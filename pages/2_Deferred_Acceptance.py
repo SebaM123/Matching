@@ -18,8 +18,8 @@ def parse_pref_list(text: str) -> list[str]:
 
 with tab_sim:
     st.markdown(
-        "Definí estudiantes, colegios, cupos y preferencias, elegí quién "
-        "propone, y corré el algoritmo."
+        "Define estudiantes, colegios, cupos y preferencias, elige quién "
+        "propone, y ejecuta el algoritmo."
     )
 
     col_n1, col_n2 = st.columns(2)
@@ -105,7 +105,7 @@ with tab_sim:
                     st.write(f"{i}. **{r.proposer}** propone a **{r.target}** → rechazado")
 
         st.info(
-            "Probá cambiar '¿Quién propone?' y volver a ejecutar con las mismas "
+            "Prueba cambiar '¿Quién propone?' y vuelve a ejecutar con las mismas "
             "preferencias: el matching puede cambiar, pero ambos resultados son estables."
         )
 

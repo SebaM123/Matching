@@ -50,7 +50,7 @@ precisamente para favorecerlos frente a los colegios.
 
 ### Para explorar en el simulador
 
-Probá correr el mismo problema con "proponen estudiantes" y luego con
+Prueba correr el mismo problema con "proponen estudiantes" y luego con
 "proponen colegios" — vas a ver que el matching puede cambiar, pero **ambos
 son estables**. Esa es la intuición central: puede haber múltiples matchings
 estables, y quién propone determina cuál de ellos se alcanza.
