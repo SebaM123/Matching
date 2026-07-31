@@ -10,7 +10,7 @@ from mechanisms.serial_dictatorship import serial_dictatorship
 st.set_page_config(page_title="Serial Dictatorship", page_icon="🔀", layout="wide")
 st.title("Serial Dictatorship")
 
-tab_sim, tab_theory = st.tabs(["🧪 Simulador", "📖 Teoría"])
+tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
 
 def parse_pref_list(text: str) -> list[str]:

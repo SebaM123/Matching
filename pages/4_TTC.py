@@ -10,7 +10,7 @@ from mechanisms.ttc import top_trading_cycles
 st.set_page_config(page_title="Top Trading Cycles", page_icon="🔀", layout="wide")
 st.title("Top Trading Cycles (TTC)")
 
-tab_sim, tab_theory = st.tabs(["🧪 Simulador", "📖 Teoría"])
+tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
 
 def parse_pref_list(text: str) -> list[str]:

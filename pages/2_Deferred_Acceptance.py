@@ -9,7 +9,7 @@ from mechanisms.deferred_acceptance import deferred_acceptance, is_stable
 st.set_page_config(page_title="Deferred Acceptance", page_icon="🔀", layout="wide")
 st.title("Deferred Acceptance (Gale-Shapley)")
 
-tab_sim, tab_theory = st.tabs(["🧪 Simulador", "📖 Teoría"])
+tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
 
 def parse_pref_list(text: str) -> list[str]:

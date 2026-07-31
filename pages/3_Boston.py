@@ -10,7 +10,7 @@ from mechanisms.deferred_acceptance import is_stable
 st.set_page_config(page_title="Boston", page_icon="🔀", layout="wide")
 st.title("Mecanismo de Boston (Immediate Acceptance)")
 
-tab_sim, tab_theory = st.tabs(["🧪 Simulador", "📖 Teoría"])
+tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
 
 def parse_pref_list(text: str) -> list[str]:

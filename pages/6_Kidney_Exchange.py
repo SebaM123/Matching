@@ -9,7 +9,7 @@ from mechanisms.kidney_exchange import kidney_exchange
 st.set_page_config(page_title="Kidney Exchange", page_icon="🔀", layout="wide")
 st.title("Kidney Exchange")
 
-tab_sim, tab_theory = st.tabs(["🧪 Simulador", "📖 Teoría"])
+tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
 
 def parse_list(text: str) -> list[str]:
