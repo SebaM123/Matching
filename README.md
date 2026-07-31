@@ -29,5 +29,5 @@ streamlit run app.py
 - [x] Boston / Immediate Acceptance
 - [x] Top Trading Cycles (TTC)
 - [x] Serial Dictatorship
-- [ ] Kidney Exchange
+- [x] Kidney Exchange
 - [ ] Simulación masiva / evaluación de mecanismos a escala
