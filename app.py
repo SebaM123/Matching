@@ -21,9 +21,9 @@ mecanismos.
 - Deferred Acceptance (Gale-Shapley)
 - Boston / Immediate Acceptance
 - Top Trading Cycles (TTC)
+- Serial Dictatorship
 
 **Planeado:**
-- Serial Dictatorship
 - Kidney Exchange
 - Simulación masiva / evaluación de mecanismos a escala
 """

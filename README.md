@@ -28,6 +28,6 @@ streamlit run app.py
 - [x] Deferred Acceptance (Gale-Shapley)
 - [x] Boston / Immediate Acceptance
 - [x] Top Trading Cycles (TTC)
-- [ ] Serial Dictatorship
+- [x] Serial Dictatorship
 - [ ] Kidney Exchange
 - [ ] Simulación masiva / evaluación de mecanismos a escala
