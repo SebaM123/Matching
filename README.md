@@ -21,10 +21,13 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Mecanismos
+## Secciones
 
+- [x] Motivación (por qué existe el diseño de mercado)
+- [x] Definiciones (glosario)
 - [x] Deferred Acceptance (Gale-Shapley)
 - [x] Boston / Immediate Acceptance
 - [ ] Top Trading Cycles (TTC)
 - [ ] Serial Dictatorship
 - [ ] Kidney Exchange
+- [ ] Simulación masiva / evaluación de mecanismos a escala

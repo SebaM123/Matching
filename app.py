@@ -11,9 +11,13 @@ Definí un problema (por ejemplo, estudiantes y colegios con sus
 preferencias), corré distintos mecanismos de asignación, y explorá sus
 propiedades — estabilidad, optimalidad, incentivos a decir la verdad.
 
-Elegí un mecanismo en el menú de la izquierda para empezar.
+Elegí una sección en el menú de la izquierda para empezar. Si es tu primera
+vez, arrancá por **Motivación** y **Definiciones** antes de meterte en los
+mecanismos.
 
 **Disponible hoy:**
+- 🌱 Motivación — por qué existe el diseño de mercado
+- 📚 Definiciones — glosario de conceptos
 - Deferred Acceptance (Gale-Shapley)
 - Boston / Immediate Acceptance
 
@@ -21,5 +25,6 @@ Elegí un mecanismo en el menú de la izquierda para empezar.
 - Top Trading Cycles (TTC)
 - Serial Dictatorship
 - Kidney Exchange
+- Simulación masiva / evaluación de mecanismos a escala
 """
 )
