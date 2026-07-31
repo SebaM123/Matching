@@ -24,7 +24,7 @@ streamlit run app.py
 ## Mecanismos
 
 - [x] Deferred Acceptance (Gale-Shapley)
-- [ ] Boston / Immediate Acceptance
+- [x] Boston / Immediate Acceptance
 - [ ] Top Trading Cycles (TTC)
 - [ ] Serial Dictatorship
 - [ ] Kidney Exchange

@@ -15,9 +15,9 @@ Elegí un mecanismo en el menú de la izquierda para empezar.
 
 **Disponible hoy:**
 - Deferred Acceptance (Gale-Shapley)
+- Boston / Immediate Acceptance
 
 **Planeado:**
-- Boston / Immediate Acceptance
 - Top Trading Cycles (TTC)
 - Serial Dictatorship
 - Kidney Exchange
