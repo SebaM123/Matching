@@ -31,7 +31,7 @@ streamlit run app.py
 - [x] Serial Dictatorship
 - [x] Kidney Exchange
 - [x] House Allocation (mercado de casas, Shapley-Scarf)
-- [ ] Comparador (todos los mecanismos sobre el mismo problema)
+- [x] Comparador (todos los mecanismos sobre el mismo problema)
 - [ ] Manipulación interactiva
 - [ ] Simulación masiva / evaluación de mecanismos a escala
 - [ ] Simulación masiva / evaluación de mecanismos a escala
