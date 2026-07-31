@@ -32,6 +32,6 @@ streamlit run app.py
 - [x] Kidney Exchange
 - [x] House Allocation (mercado de casas, Shapley-Scarf)
 - [x] Comparador (todos los mecanismos sobre el mismo problema)
-- [ ] Manipulación interactiva
+- [x] Manipulación interactiva
 - [ ] Simulación masiva / evaluación de mecanismos a escala
 - [ ] Simulación masiva / evaluación de mecanismos a escala
