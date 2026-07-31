@@ -20,9 +20,9 @@ mecanismos.
 - 📚 Definiciones — glosario de conceptos
 - Deferred Acceptance (Gale-Shapley)
 - Boston / Immediate Acceptance
+- Top Trading Cycles (TTC)
 
 **Planeado:**
-- Top Trading Cycles (TTC)
 - Serial Dictatorship
 - Kidney Exchange
 - Simulación masiva / evaluación de mecanismos a escala
