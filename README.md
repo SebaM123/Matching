@@ -34,4 +34,5 @@ streamlit run app.py
 - [x] Comparador (todos los mecanismos sobre el mismo problema)
 - [x] Manipulación interactiva
 - [x] Simulación masiva / evaluación de mecanismos a escala
+- [x] Chile en la práctica (SAE actual + reforma en discusión, 2026)
 - [ ] Simulación masiva / evaluación de mecanismos a escala

@@ -27,5 +27,6 @@ mecanismos.
 - Comparador (todos los mecanismos sobre el mismo problema)
 - Manipulación interactiva (jugar a mentir tus preferencias)
 - Simulación masiva (cientos de estudiantes, estadísticas agregadas)
+- 🇨🇱 Chile en la práctica (el SAE y la reforma en discusión, 2026)
 """
 )

@@ -28,6 +28,24 @@ def _make_capacities(n_students: int, schools: list[str]) -> dict[str, int]:
     return capacities
 
 
+def generate_student_preferences(
+    students: list[str],
+    schools: list[str],
+    pref_correlation: float,
+    rng: random.Random,
+) -> dict[str, list[str]]:
+    """pref_correlation en [0, 1]: 0 = preferencias totalmente independientes
+    entre estudiantes; 1 = todos comparten exactamente el mismo orden
+    (colegios "populares" comunes a todos)."""
+    quality = {c: rng.random() for c in schools}
+    student_prefs = {}
+    for s in students:
+        noise = {c: rng.random() for c in schools}
+        score = {c: pref_correlation * quality[c] + (1 - pref_correlation) * noise[c] for c in schools}
+        student_prefs[s] = sorted(schools, key=lambda c: -score[c])
+    return student_prefs
+
+
 def generate_market(
     n_students: int,
     n_schools: int,
@@ -36,10 +54,6 @@ def generate_market(
     seed: int | None = None,
 ) -> Market:
     """Genera un mercado aleatorio.
-
-    pref_correlation en [0, 1]: 0 = preferencias de estudiantes totalmente
-    independientes entre sí; 1 = todos los estudiantes tienen exactamente
-    el mismo orden de preferencia (colegios "populares" comunes a todos).
 
     common_priority: si es True, los colegios comparten un único orden de
     prioridad (como en Serial Dictatorship); si es False, cada colegio
@@ -51,12 +65,7 @@ def generate_market(
     schools = [f"C{i+1}" for i in range(n_schools)]
     capacities = _make_capacities(n_students, schools)
 
-    quality = {c: rng.random() for c in schools}
-    student_prefs = {}
-    for s in students:
-        noise = {c: rng.random() for c in schools}
-        score = {c: pref_correlation * quality[c] + (1 - pref_correlation) * noise[c] for c in schools}
-        student_prefs[s] = sorted(schools, key=lambda c: -score[c])
+    student_prefs = generate_student_preferences(students, schools, pref_correlation, rng)
 
     if common_priority:
         order = list(students)
