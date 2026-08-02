@@ -33,5 +33,5 @@ streamlit run app.py
 - [x] House Allocation (mercado de casas, Shapley-Scarf)
 - [x] Comparador (todos los mecanismos sobre el mismo problema)
 - [x] Manipulación interactiva
-- [ ] Simulación masiva / evaluación de mecanismos a escala
+- [x] Simulación masiva / evaluación de mecanismos a escala
 - [ ] Simulación masiva / evaluación de mecanismos a escala
