@@ -20,11 +20,14 @@ class Market:
 
 
 def _make_capacities(n_students: int, schools: list[str]) -> dict[str, int]:
+    """Reparte n_students cupos entre los colegios en partes iguales. Si
+    hay más colegios que estudiantes, algunos colegios quedan con 0
+    cupos -- la suma siempre da exactamente n_students."""
     n_schools = len(schools)
     base, rem = divmod(n_students, n_schools)
     capacities = {}
     for i, c in enumerate(schools):
-        capacities[c] = max(1, base + (1 if i < rem else 0))
+        capacities[c] = base + (1 if i < rem else 0)
     return capacities
 
 

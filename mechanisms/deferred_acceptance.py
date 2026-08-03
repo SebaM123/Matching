@@ -71,7 +71,7 @@ def _da_student_proposing(student_prefs, school_prefs, capacities) -> DAResult:
             held.append(s)
             held.sort(key=lambda x: school_rank[c][x])
             rounds.append(Round(proposer=s, target=c, accepted=True))
-        else:
+        elif held:
             worst = held[-1]
             if school_rank[c][s] < school_rank[c][worst]:
                 held[-1] = s
@@ -81,6 +81,10 @@ def _da_student_proposing(student_prefs, school_prefs, capacities) -> DAResult:
             else:
                 rounds.append(Round(proposer=s, target=c, accepted=False))
                 unmatched.append(s)
+        else:
+            # capacities[c] == 0: nunca hay cupo, rechazo directo.
+            rounds.append(Round(proposer=s, target=c, accepted=False))
+            unmatched.append(s)
 
     matching: dict[str, str | None] = {s: None for s in student_prefs}
     for c, students in tentative.items():
