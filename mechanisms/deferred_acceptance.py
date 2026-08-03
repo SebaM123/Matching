@@ -163,6 +163,8 @@ def is_stable(
         for c in prefs[:current_rank]:  # colegios que s prefiere a su asignación actual
             if s not in school_rank.get(c, {}):
                 continue
+            if capacities[c] == 0:
+                continue  # sin cupos, nunca puede haber par bloqueante con c
             held = occupants[c]
             if len(held) < capacities[c]:
                 blocking_pairs.append((s, c))

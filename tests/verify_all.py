@@ -57,7 +57,7 @@ def random_instance(rng, max_students=8, max_schools=4, full_prefs=True):
     n_schools = rng.randint(1, max_schools)
     students = [f"E{i+1}" for i in range(n_students)]
     schools = [f"C{i+1}" for i in range(n_schools)]
-    capacities = {c: rng.randint(1, max(1, n_students // n_schools + 1)) for c in schools}
+    capacities = {c: rng.randint(0, max(1, n_students // n_schools + 1)) for c in schools}
     student_prefs = random_prefs(rng, students, schools, full=full_prefs)
     school_prefs = random_prefs(rng, schools, students, full=full_prefs)
     return students, schools, capacities, student_prefs, school_prefs
@@ -347,6 +347,8 @@ def fuzz_simulation_module(trials=100, seed=7):
         check(summ["matched"] + sum(1 for v in result.matching.values() if v is None) == n_students, "summarize no cuadra con n_students")
         total_bucket = sum(summ["bucket_counts"].values())
         check(total_bucket == n_students, f"Los buckets de ranking no suman n_students: {total_bucket} != {n_students}")
+        stable, blocking = is_stable(result.matching, market.student_prefs, market.school_prefs, market.capacities)
+        check(stable, f"DA sobre mercado generado dio inestable: blocking={blocking}")
 
 
 def large_scale_smoke(sizes=(200, 500, 1000, 2000)):
@@ -384,6 +386,8 @@ def test_more_schools_than_students():
     for side in ["students", "schools"]:
         result = deferred_acceptance(student_prefs, school_prefs, capacities, proposing=side)
         well_formed(result.matching, capacities, student_prefs, f"cero-cupo-DA-{side}")
+        stable, blocking = is_stable(result.matching, student_prefs, school_prefs, capacities)
+        check(stable, f"cero-cupo-DA-{side}: inestable, blocking={blocking}")
     well_formed(boston_mechanism(student_prefs, school_prefs, capacities).matching, capacities, student_prefs, "cero-cupo-Boston")
     well_formed(top_trading_cycles(student_prefs, school_prefs, capacities).matching, capacities, student_prefs, "cero-cupo-TTC")
     well_formed(serial_dictatorship(students, student_prefs, capacities).matching, capacities, student_prefs, "cero-cupo-SD")
