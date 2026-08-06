@@ -82,3 +82,14 @@ $s$, $\succ_s'$, tal que $\mu^{DA}(\succ_s', \succ_{-s})(s) \succ_s \mu^{DA}(\su
 Esta garantía **no** se extiende al lado que recibe las propuestas (los
 colegios sí pueden, en general, beneficiarse reportando una prioridad
 distinta de la real).
+
+**Teorema de unicidad (Alcalde y Barberà, 1994).** Con prioridades $\succ_c$
+estrictas y fijas, DA (estudiantes proponiendo) es el **único** mecanismo
+que es simultáneamente estable y strategy-proof para los estudiantes — no
+existe otro mecanismo con esas dos propiedades a la vez. Es el mismo tipo
+de resultado que vas a ver para TTC en la página de Mercado de Casas (Ma,
+1994), aplicado a un problema distinto: ahí "las tres" propiedades
+coexistían porque no había prioridades externas; acá, "las dos"
+propiedades (estabilidad + strategy-proofness) determinan un único
+mecanismo, precisamente porque exigir la tercera (Pareto eficiencia) es lo
+que ya no se puede sumar sin romper alguna de las otras dos.

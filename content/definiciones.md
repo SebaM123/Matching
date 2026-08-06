@@ -67,30 +67,82 @@ los cupos son 1, se llama matching **uno-a-uno**; si pueden ser mayores a
 restricción de factibilidad $|\mu^{-1}(c)| \le q_c$. Uno-a-uno es el caso
 particular $q_c = 1 \; \forall c$.
 
+Una nota técnica: cuando $q_c > 1$, la prioridad $\succ_c$ que usa este
+portal es un orden sobre estudiantes *individuales* — para que eso alcance
+para comparar *grupos* de estudiantes (y así comparar matchings completos),
+se asume que la preferencia del colegio sobre grupos es **responsive**
+["responsiva", Roth (1985)]: prefiere un grupo a otro si se obtiene
+reemplazando a un estudiante por uno mejor (según $\succ_c$), sin cambiar
+al resto. Es el supuesto estándar en la literatura y el que hace que "una
+lista de prioridad" alcance para definir el mecanismo.
+
+### Racionalidad individual
+
+Un matching es individualmente racional si a nadie le conviene, por sí
+solo, romper su propia asignación — ningún estudiante prefiere quedarse
+sin colegio a su asignación actual, y ningún colegio preferiría dejar un
+cupo vacío antes que tener a alguno de sus estudiantes actuales.
+
+**Formalmente:** $\mu$ es individualmente racional si no está **bloqueado
+por ningún agente individual**:
+
+- No está bloqueado por un estudiante $s$: $\mu(s) \succeq_s \emptyset$
+  (a $s$ le resulta aceptable su asignación, o queda sin colegio).
+- No está bloqueado por un colegio $c$: para todo $s' \in \mu^{-1}(c)$,
+  $s' \succeq_c \emptyset$ (todos los estudiantes que $c$ recibió le son
+  aceptables).
+
 ### Estabilidad
 
 Un matching es estable si no existe un **par bloqueante**: un estudiante y
 un colegio que preferirían estar juntos por sobre su asignación actual (el
 estudiante prefiere ese colegio a donde está, y el colegio preferiría a ese
-estudiante por sobre alguno de los que ya tiene, o tiene cupo libre). La
-estabilidad es la propiedad central que persigue Deferred Acceptance.
+estudiante por sobre alguno de los que ya tiene, o tiene cupo libre y lo
+acepta). La estabilidad es la propiedad central que persigue Deferred
+Acceptance.
 
-**Formalmente:** $\mu$ es estable si no existe un par bloqueante (ver
-definición formal abajo). Equivalentemente, $\mu$ es estable si es
-individualmente racional para ambos lados y no admite ningún par
-bloqueante.
+**Formalmente:** $\mu$ es estable si es individualmente racional y no
+admite ningún par bloqueante (ver definición formal abajo). De forma
+equivalente (Balinski y Sönmez, 1999), $\mu$ es estable si y solo si es
+individualmente racional, **no desperdicia cupos**, y **elimina la
+envidia justificada** — ver esas dos definiciones más abajo, que separan
+el par bloqueante en sus dos causas posibles.
 
 ### Par bloqueante
 
 Ver Estabilidad — es el nombre técnico del "problema" que la estabilidad
 busca evitar.
 
-**Formalmente:** el par $(s, c) \in S \times C$ **bloquea** $\mu$ si:
+**Formalmente:** el par $(s, c) \in S \times C$ **bloquea** $\mu$ si
+$c \succ_s \mu(s)$ (s prefiere $c$ a su asignación actual) y, además,
+$c$ preferiría tener a $s$:
 
-$$c \succ_s \mu(s) \quad \text{y} \quad \Big(|\mu^{-1}(c)| < q_c \;\; \text{o} \;\; \exists\, s' \in \mu^{-1}(c) \text{ con } s \succ_c s'\Big)$$
+$$c \succ_s \mu(s) \quad \text{y} \quad \Big(\exists\, s' \in \mu^{-1}(c) \text{ con } s \succ_c s' \quad \text{o} \quad \big(|\mu^{-1}(c)| < q_c \text{ y } s \succ_c \emptyset\big)\Big)$$
 
-Es decir: $s$ prefiere $c$ a su asignación actual, y $c$ tiene cupo libre o
-preferiría a $s$ por sobre algún estudiante que ya tiene.
+Es decir: $s$ prefiere $c$ a su asignación actual, y además $c$ prefiere a
+$s$ por sobre algún estudiante que ya tiene, o tiene cupo libre **y** $s$
+le resulta aceptable.
+
+### No desperdicio (*non-wasteful*)
+
+Un matching no desperdicia cupos si ningún estudiante que preferiría un
+colegio con asiento libre se queda sin ir a él — no tiene sentido dejar un
+cupo vacío mientras alguien que lo prefiere y es aceptable para ese
+colegio no lo consigue.
+
+**Formalmente:** $\mu$ no desperdicia cupos si no existen $s \in S$,
+$c \in C$ tales que $c \succ_s \mu(s)$, $|\mu^{-1}(c)| < q_c$, y
+$s \succ_c \emptyset$.
+
+### Envidia justificada
+
+Un estudiante $s$ tiene envidia justificada de otro estudiante $s'$ si $s$
+preferiría el colegio de $s'$ y además tiene *mayor prioridad* que $s'$ en
+ese colegio — es "justificada" precisamente porque, de existir, sería un
+caso legítimo de prioridad ignorada.
+
+**Formalmente:** $\mu$ **elimina la envidia justificada** si no existen
+$s, s' \in S$ tales que $\mu(s') \succ_s \mu(s)$ y $s \succ_{\mu(s')} s'$.
 
 ### Optimalidad (para un lado del mercado)
 

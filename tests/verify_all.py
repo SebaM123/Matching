@@ -404,7 +404,7 @@ def main():
     fuzz_ttc()
     print("Serial Dictatorship (300 instancias)...")
     fuzz_serial_dictatorship()
-    print("House Allocation (200 instancias + IR + 60 con Pareto por fuerza bruta)...")
+    print("Mercado de Casas / Housing Market (200 instancias + IR + 60 con Pareto por fuerza bruta)...")
     fuzz_house_allocation()
     print("Kidney Exchange (150 instancias + 60 con optimalidad por fuerza bruta)...")
     fuzz_kidney_exchange()

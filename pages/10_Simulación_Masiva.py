@@ -21,7 +21,7 @@ st.markdown(
     "agregadas** entre mecanismos — cosas que no se ven con ejemplos "
     "chicos, como qué tan seguido aparecen pares bloqueantes o qué "
     "fracción de estudiantes consigue su primera opción.\n\n"
-    "No incluye Kidney Exchange ni House Allocation: sus algoritmos no "
+    "No incluye Kidney Exchange ni Mercado de Casas: sus algoritmos no "
     "están pensados para esta escala (Kidney Exchange en particular es "
     "computacionalmente costoso de resolver de forma exacta)."
 )

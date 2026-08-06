@@ -1,9 +1,22 @@
-## ¿Qué es House Allocation?
+## ¿Qué es el Mercado de Casas?
 
 Es el problema original que le dio origen a Top Trading Cycles: el
-**mercado de intercambio de casas** de Shapley y Scarf (1974). Es un caso
-particular —y muy especial— del problema de matching con prioridades que
-ya conoces.
+**mercado de intercambio de casas** (*housing market*) de Shapley y Scarf
+(1974). Es un caso particular —y muy especial— del problema de matching
+con prioridades que ya conoces.
+
+**Una aclaración de nombres**, porque la literatura usa dos términos
+parecidos para dos modelos distintos:
+
+- **Mercado de casas / *housing market*** (Shapley y Scarf, 1974): cada
+  agente **ya es dueño** de una casa — es este modelo, el que vas a
+  explorar acá.
+- **Asignación de casas / *house allocation*** (Hylland y Zeckhauser,
+  1979): **nadie es dueño** de nada al empezar; un planificador central
+  asigna las casas usando solo las preferencias. Ese problema lo resuelven
+  Serial Dictatorship (que ya viste) o una variante de TTC que finge una
+  propiedad inicial arbitraria — y hay un resultado elegante que los
+  conecta (lo ves más abajo, en Formalización).
 
 ### El modelo
 
@@ -91,3 +104,27 @@ individualmente racional, y strategy-proof.
 simultáneamente Pareto eficiente, individualmente racional, y
 strategy-proof en este modelo — no existe otro mecanismo con esas tres
 propiedades a la vez.
+
+### La conexión con Serial Dictatorship (el modelo *sin* dueños)
+
+Si en vez de partir de una propiedad real $\omega$ le "inventamos" una
+propiedad inicial arbitraria $\mu_0: A \to H$ a un problema de
+**asignación de casas** (donde nadie es dueño de nada realmente), y
+corremos TTC sobre esa propiedad ficticia, obtenemos un mecanismo válido
+para ese problema — llamado *"core from assigned endowments"*,
+$TTC_{\mu_0}$.
+
+**Teorema (Abdulkadiroğlu y Sönmez, 1998).** Para el problema de
+asignación de casas sin dueños, el conjunto de matchings alcanzables por
+**alguna** Serial Dictatorship (variando el orden $\pi$) es exactamente
+igual al conjunto alcanzable por **algún** $TTC_{\mu_0}$ (variando la
+propiedad ficticia $\mu_0$), y ambos conjuntos son exactamente el conjunto
+de **todos los matchings Pareto eficientes**:
+
+$$\{\mu^{SD}_\pi : \pi\} \;=\; \{TTC_{\mu_0} : \mu_0\} \;=\; \{\text{matchings Pareto eficientes}\}$$
+
+Es un resultado bonito porque conecta dos mecanismos que en el portal
+parecen distintos — turnos secuenciales (Serial Dictatorship) vs. ciclos
+de intercambio (TTC) — mostrando que, para este problema, son en el fondo
+dos formas de generar exactamente la misma familia de resultados
+eficientes.

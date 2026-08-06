@@ -30,7 +30,7 @@ streamlit run app.py
 - [x] Top Trading Cycles (TTC)
 - [x] Serial Dictatorship
 - [x] Kidney Exchange
-- [x] House Allocation (mercado de casas, Shapley-Scarf)
+- [x] Mercado de Casas (Housing Market, Shapley-Scarf)
 - [x] Comparador (todos los mecanismos sobre el mismo problema)
 - [x] Manipulación interactiva
 - [x] Simulación masiva / evaluación de mecanismos a escala

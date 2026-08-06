@@ -6,8 +6,8 @@ import streamlit as st
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from mechanisms.ttc import top_trading_cycles
 
-st.set_page_config(page_title="House Allocation", page_icon="🔀", layout="wide")
-st.title("House Allocation (mercado de casas, Shapley-Scarf)")
+st.set_page_config(page_title="Mercado de Casas", page_icon="🔀", layout="wide")
+st.title("Mercado de Casas (Housing Market, Shapley-Scarf)")
 
 tab_theory, tab_sim = st.tabs(["📖 Teoría", "🧪 Simulador"])
 
@@ -47,7 +47,7 @@ with tab_sim:
     house_prefs = {h: [owner_of[h]] for h in houses}
     capacities = {h: 1 for h in houses}
 
-    if st.button("▶ Ejecutar House Allocation", type="primary"):
+    if st.button("▶ Ejecutar Mercado de Casas", type="primary"):
         result = top_trading_cycles(agent_prefs, house_prefs, capacities)
 
         st.subheader("Resultado")

@@ -17,7 +17,7 @@ st.markdown(
     "preferencias y prioridades) y compara, sobre exactamente los mismos "
     "datos, el resultado de **Deferred Acceptance, Boston, Top Trading "
     "Cycles y Serial Dictatorship** al mismo tiempo. Kidney Exchange y "
-    "House Allocation no entran aquí porque son problemas de otra forma "
+    "Mercado de Casas no entran aquí porque son problemas de otra forma "
     "(no de dos lados con cupos)."
 )
 

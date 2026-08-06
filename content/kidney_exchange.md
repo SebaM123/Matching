@@ -82,3 +82,23 @@ en general — por eso los programas reales de kidney exchange usan
 programación entera y heurísticas especializadas, y por eso este
 simulador (que resuelve el problema exacto por fuerza bruta) solo escala
 a pocas parejas.
+
+### Una simplificación, explícita
+
+El modelo **original** de Roth, Sönmez y Ünver (2004) es más rico que el
+de este simulador en dos sentidos: (1) cada paciente tiene una preferencia
+**estricta** sobre sus riñones compatibles (no todos son igual de buenos —
+hay diferencias de calidad de match), y (2) además de ciclos entre parejas,
+permite **cadenas** que arrancan con un donante altruista (sin paciente
+asociado) y terminan entregándole un riñón a alguien en la lista de espera
+de donantes fallecidos — cadenas que no necesitan ser simultáneas, porque
+no hay reciprocidad que proteger.
+
+Este simulador usa una versión **simplificada** y **restringida a ciclos
+cortos**, más cercana a la formulación de optimización combinatoria que
+aparece en trabajos posteriores centrados en la restricción de simultaneidad
+quirúrgica (ej. Roth, Sönmez y Ünver, 2007; Abraham, Blum y Sandholm, 2007):
+compatibilidad binaria (sí/no, sin ranking de calidad entre opciones
+compatibles) y sin cadenas al donante altruista. Es una simplificación
+razonable para el objetivo pedagógico del portal, pero vale decirlo
+explícitamente para no confundirla con el modelo original.
