@@ -54,3 +54,31 @@ Prueba correr el mismo problema con "proponen estudiantes" y luego con
 "proponen colegios" — vas a ver que el matching puede cambiar, pero **ambos
 son estables**. Esa es la intuición central: puede haber múltiples matchings
 estables, y quién propone determina cuál de ellos se alcanza.
+
+### Formalización
+
+Usando la notación de **Definiciones** ($S$, $C$, $q_c$, $\succ_s$, $\succ_c$):
+
+**El algoritmo** (versión estudiantes-proponentes), como una secuencia de
+rondas $t = 1, 2, \dots$: sea $A_t(s) \subseteq C$ el conjunto de colegios
+que $s$ todavía no ha probado y que no lo rechazaron. En cada ronda, cada
+estudiante $s$ sin colegio tentativo propone a $\arg\max_{\succ_s} A_t(s)$.
+Cada colegio $c$ retiene tentativamente, de entre quienes le propusieron
+más los que ya tenía, a los $q_c$ mejores según $\succ_c$, y rechaza al
+resto. El algoritmo termina cuando ninguna propuesta es rechazada.
+
+**Teorema (Gale y Shapley, 1962).** El algoritmo de Deferred Acceptance
+converge en un número finito de pasos a un matching $\mu^{DA}$ que es
+**estable**. Además, si proponen los estudiantes, $\mu^{DA}$ es el matching
+**estudiante-óptimo**: para todo matching estable $\mu'$,
+
+$$\mu^{DA}(s) \;\; \succeq_s \;\; \mu'(s) \qquad \forall\, s \in S$$
+
+**Teorema (optimalidad/strategy-proofness del lado que propone).** Si
+proponen los estudiantes, $\mu^{DA}$ es strategy-proof para $S$: ningún
+estudiante puede obtener un resultado mejor (según su propia $\succ_s$)
+reportando una preferencia distinta de la verdadera. Formalmente, no existe
+$s$, $\succ_s'$, tal que $\mu^{DA}(\succ_s', \succ_{-s})(s) \succ_s \mu^{DA}(\succ_s, \succ_{-s})(s)$.
+Esta garantía **no** se extiende al lado que recibe las propuestas (los
+colegios sí pueden, en general, beneficiarse reportando una prioridad
+distinta de la real).

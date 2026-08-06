@@ -71,3 +71,35 @@ Es decir: **nadie empeora, y dos estudiantes mejoran** — una mejora de
 Pareto estricta sobre DA. Pero observa qué dice el simulador sobre
 estabilidad del resultado de TTC: aparece un par bloqueante. Ese es
 exactamente el costo del que habla la tabla de arriba.
+
+### Formalización
+
+En cada ronda, sobre el conjunto remanente de estudiantes $S'$ y colegios
+$C'$ (con cupo remanente $q_c' > 0$), se definen dos funciones puntero:
+
+$$f(s) = \arg\max_{\succ_s} \{c \in C' : \text{colegio remanente}\} \qquad g(c) = \arg\max_{\succ_c} \{s \in S' : \text{estudiante remanente}\}$$
+
+Como $S' \cup C'$ es finito y cada nodo tiene exactamente una flecha
+saliente ($f$ o $g$ según corresponda), siguiendo las flechas siempre se
+encuentra un **ciclo**: una secuencia $s_1 \to c_1 \to s_2 \to c_2 \to
+\cdots \to s_k \to c_k \to s_1$ con $f(s_i) = c_i$ y $g(c_i) = s_{i+1 \bmod k}$.
+Todo estudiante en un ciclo recibe el colegio al que apunta, de forma
+definitiva.
+
+**Teorema (Pareto eficiencia, Abdulkadiroğlu y Sönmez, 2003).** El
+matching $\mu^{TTC}$ que produce TTC es Pareto eficiente: no existe un
+matching factible $\mu'$ con $\mu'(s) \succeq_s \mu^{TTC}(s) \; \forall s$
+y $\mu'(s) \succ_s \mu^{TTC}(s)$ para algún $s$.
+
+**Teorema (strategy-proofness).** TTC es strategy-proof: no existen $s$,
+$\succ_s'$, $\succ_{-s}$ tales que $\mu^{TTC}(\succ_s', \succ_{-s})(s) \succ_s \mu^{TTC}(\succ_s, \succ_{-s})(s)$.
+
+**Proposición (no estabilidad).** $\mu^{TTC}$ no es, en general, estable:
+existen perfiles donde $\mu^{TTC}$ admite un par bloqueante $(s, c)$ con
+$c \succ_s \mu^{TTC}(s)$ y $s \succ_c s'$ para algún $s' \in (\mu^{TTC})^{-1}(c)$.
+
+**El trade-off, formalmente.** No existe ningún mecanismo $\varphi$ que
+sea simultáneamente estable y Pareto eficiente para todo perfil de
+preferencias y prioridades arbitrario — DA logra lo primero, TTC lo
+segundo, y ambos son strategy-proof (para el lado que propone), pero
+ningún mecanismo logra las tres cosas en general.

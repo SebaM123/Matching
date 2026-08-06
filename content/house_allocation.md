@@ -58,3 +58,36 @@ El ejemplo por defecto tiene 3 agentes en un **ciclo de intercambio
 perfecto**: A1 quiere la casa de A2, A2 quiere la de A3, y A3 quiere la de
 A1. Vas a ver que los tres consiguen su casa favorita a través de un único
 ciclo de tres — nadie se queda con lo que ya tenía, y todos mejoran.
+
+### Formalización
+
+**El modelo (Shapley y Scarf, 1974).** Un conjunto de agentes $A = \{a_1,
+\dots, a_n\}$, un conjunto de casas $H = \{h_1, \dots, h_n\}$, una biyección
+de propiedad $\omega: A \to H$ (cada agente es dueño de exactamente una
+casa), y para cada agente $a$ una relación de preferencia estricta y
+completa $\succ_a$ sobre $H$. Una **asignación** es una biyección
+$\mu: A \to H$ (todos entregan y reciben exactamente una casa).
+
+**El algoritmo (TTC para mercados de casas).** Sobre el conjunto remanente
+$A' \subseteq A$: cada $a \in A'$ apunta a $f(a) = \arg\max_{\succ_a} H'$
+(su casa remanente favorita); cada casa remanente $h \in H'$ apunta a
+$g(h) = \omega^{-1}(h)$ si $\omega^{-1}(h) \in A'$ (su dueño, mientras
+siga presente). Se resuelven los ciclos y se repite.
+
+**Individual racionalidad, formalmente:** $\mu(a) \succeq_a \omega(a)$
+para todo $a \in A$ — nadie recibe algo peor que su propia casa.
+
+**El núcleo (***core***).** Una asignación $\mu$ está en el núcleo si
+ningún subconjunto de agentes $A_0 \subseteq A$ puede, redistribuyendo
+solo las casas que ellos mismos poseen ($\{\omega(a) : a \in A_0\}$),
+lograr que todos en $A_0$ obtengan algo tan bueno como $\mu$ y al menos
+uno estrictamente mejor.
+
+**Teorema (Shapley y Scarf, 1974; Roth, 1982).** El matching $\mu^{TTC}$
+producido por TTC es la única asignación en el núcleo, es Pareto eficiente,
+individualmente racional, y strategy-proof.
+
+**Teorema de unicidad (Ma, 1994).** TTC es el **único** mecanismo que es
+simultáneamente Pareto eficiente, individualmente racional, y
+strategy-proof en este modelo — no existe otro mecanismo con esas tres
+propiedades a la vez.

@@ -91,3 +91,35 @@ Los pesos y porcentajes de cupo reservado en el simulador son
 dirección del efecto — no una réplica exacta de la fórmula legal
 propuesta (que todavía se está tramitando y podría cambiar). Ajustalos
 vos mismo para ver cómo cambia el resultado.
+
+### Formalización
+
+**La prioridad bajo Elección Mutua**, para un colegio $c$ que adhiere, se
+modela con un puntaje ponderado sobre criterios observables: sea
+$m(s) \in [0,1]$ el rendimiento académico simulado, $e_c(s) \in [0,1]$
+una señal de entrevista/adhesión (específica de $c$), y $x_c(s) \in [0,1]$
+la cercanía territorial a $c$. Con pesos $w_m, w_e, w_x \ge 0$:
+
+$$\text{puntaje}_c(s) = \frac{w_m \cdot m(s) + w_e \cdot e_c(s) + w_x \cdot x_c(s)}{w_m + w_e + w_x} \qquad \succ_c \; \text{ordena } S \text{ por este puntaje, descendente}$$
+
+**El cupo reservado**, formalmente, es la transformación de prioridad
+conocida como ***minority reserve*** (Hafalir, Yenmez y Yıldırım, 2013):
+sea $R \subseteq S$ el grupo con cupo reservado (prioritarios SEP y
+estudiantes con discapacidad) y $r_c = \lceil \rho \cdot q_c \rceil$ el
+cupo reservado del colegio $c$ (con $\rho \in [0,1]$ la proporción
+reservada). Se toman los primeros $r_c$ estudiantes de $R$ según el orden
+por puntaje, y se los antepone al resto (que sigue ordenado por puntaje
+sin distinción de grupo):
+
+$$\succ_c^{\text{con reserva}} \;=\; \underbrace{(R \cap \succ_c)\big[:r_c\big]}_{\text{primero, hasta llenar el cupo reservado}} \;\;+\;\; \underbrace{\succ_c \text{ restante}}_{\text{después, sin distinción de grupo}}$$
+
+Esta transformación preserva las propiedades de Deferred Acceptance
+(estabilidad, optimalidad, strategy-proofness) **respecto a la prioridad
+ya transformada** $\succ_c^{\text{con reserva}}$ — es una forma de
+modelar cupos reservados sin tener que modificar el algoritmo de DA en
+sí, y es la misma idea que usa el simulador comparativo de la pestaña
+anterior.
+
+**La Asignación Aleatoria**, formalmente, es el caso $\succ_c = \succ_{c'}$
+para todo $c, c'$ (prioridad común aleatoria) que ya viste en Serial
+Dictatorship — con las propiedades correspondientes de ese caso especial.

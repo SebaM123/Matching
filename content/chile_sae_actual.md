@@ -72,3 +72,22 @@ estudiantes sintéticos con estos mismos atributos (hermano, prioritario
 SEP, hijo de funcionario, exalumno) y ver cómo la prioridad que arma el
 SAE actual determina quién accede a los colegios más demandados —
 antes de comparar con la reforma que se explica en la próxima pestaña.
+
+### Formalización
+
+La prioridad $\succ_c$ de cada colegio $c$ se construye como un **orden
+lexicográfico por categorías**: sea $T: S \to \{1, 2, 3, 4, 5\}$ la
+categoría legal de cada estudiante ($1$ = hermano, $2$ = prioritario SEP,
+$3$ = hijo de funcionario, $4$ = exalumno, $5$ = resto — asignada por la
+primera categoría que aplique, en ese orden), y sea $r_c: S \to \mathbb{R}$
+un desempate (histéricamente aleatorio; desde 2026, una función
+determinística de RUT y RBD). Entonces:
+
+$$s \succ_c s' \quad \Longleftrightarrow \quad T(s) < T(s') \;\; \text{o} \;\; \big(T(s) = T(s') \; \text{y} \; r_c(s) < r_c(s')\big)$$
+
+A diferencia del modelo general de este portal, $\succ_c$ **no varía
+libremente entre colegios**: todos los colegios usan la misma función
+$T$ (fijada por ley), y solo el desempate $r_c$ puede diferir. El
+mecanismo sigue siendo Deferred Acceptance sobre esta $\succ_c$
+particular, así que el Teorema de Gale-Shapley (estabilidad,
+optimalidad para las familias) sigue aplicando sin cambios.

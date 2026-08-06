@@ -66,3 +66,31 @@ mismas preferencias que la página de Deferred Acceptance. Vas a ver que da
 exactamente el mismo resultado (E1→C1, E2→C2, E3→C3) — y que el simulador
 lo marca como estable. Prueba cambiar el orden de prioridad y ver cómo
 cambia el resultado.
+
+### Formalización
+
+Sea $\pi: \{1, \dots, n\} \to S$ el orden de prioridad dado (una
+biyección: $\pi(1)$ elige primero, $\pi(2)$ segundo, etc.), y sea
+$C_k \subseteq C$ el conjunto de colegios con cupo remanente antes del
+turno $k$. El mecanismo asigna, secuencialmente para $k = 1, \dots, n$:
+
+$$\mu\big(\pi(k)\big) = \arg\max_{\succ_{\pi(k)}} C_k$$
+
+y luego se actualiza $C_{k+1} = C_k$ salvo que se agote el cupo del
+colegio elegido, en cuyo caso se lo remueve.
+
+**Teorema.** Para cualquier $\pi$, el matching $\mu^{SD}_\pi$ es
+**Pareto eficiente** y el mecanismo es **strategy-proof**, para cualquier
+perfil de preferencias $(\succ_s)$.
+
+**Proposición (caso especial de prioridad común).** Si $\succ_c \,=\, \succ_c'$
+para todo $c, c' \in C$ (todos los colegios comparten el mismo orden de
+prioridad $\pi$), entonces:
+
+$$\mu^{SD}_\pi \;=\; \mu^{TTC} \;=\; \mu^{DA}$$
+
+y ese matching común es simultáneamente estable, Pareto eficiente y
+strategy-proof. Es el único caso donde las tres propiedades coexisten sin
+tensión — precisamente porque, con una sola prioridad compartida, la
+prioridad de cada colegio deja de ser una restricción independiente que
+pueda generar ganancias de intercambio no explotadas.

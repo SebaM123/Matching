@@ -59,3 +59,26 @@ de P3, P3 con el de P1), y P4 no es compatible con nadie.
   a pesar de que la compatibilidad circular sí existía. Esa es la razón
   concreta por la que el largo máximo de ciclo permitido importa tanto en
   la práctica.
+
+### Formalización
+
+**El modelo.** Un conjunto de parejas $P = \{p_1, \dots, p_n\}$ y un
+**grafo dirigido de compatibilidad** $G = (P, E)$, donde $(p_i, p_j) \in E$
+si y solo si el donante de $p_i$ es compatible con el paciente de $p_j$.
+Un **ciclo factible** es una secuencia $p_{i_1} \to p_{i_2} \to \cdots \to
+p_{i_k} \to p_{i_1}$ con todas las aristas en $E$ y largo $2 \le k \le L$
+(el largo máximo permitido).
+
+**El objetivo**, como problema de optimización — elegir un conjunto de
+ciclos $\mathcal{K} = \{K_1, \dots, K_r\}$, vértice-disjuntos entre sí,
+que maximice la cantidad total de parejas trasplantadas:
+
+$$\max_{\mathcal{K}} \; \sum_{K \in \mathcal{K}} |K| \qquad \text{sujeto a } \;\; K_i \cap K_j = \emptyset \;\; \forall i \ne j, \;\; 2 \le |K| \le L \;\; \forall K \in \mathcal{K}$$
+
+**Complejidad.** Para $L = 2$, este problema equivale a encontrar un
+**matching máximo** en un grafo (resoluble en tiempo polinomial, ej. con
+el algoritmo de Edmonds). Para $L \ge 3$, el problema es **NP-difícil**
+en general — por eso los programas reales de kidney exchange usan
+programación entera y heurísticas especializadas, y por eso este
+simulador (que resuelve el problema exacto por fuerza bruta) solo escala
+a pocas parejas.

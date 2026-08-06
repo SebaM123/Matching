@@ -55,3 +55,27 @@ colegios — un caso realista de "prioridad por mérito único". Nota que:
 
 Compara esto con lo que hace DA sobre las mismas preferencias (pestaña
 anterior) — ahí ese problema no aparece.
+
+### Formalización
+
+**El algoritmo**, en rondas $t = 1, 2, \dots$: sea $k_s$ el número de
+propuestas ya hechas por $s$. En la ronda $t$, cada estudiante $s$ sin
+colegio **asignado en firme** propone a su $k_s$-ésimo colegio favorito
+según $\succ_s$. Cada colegio $c$ acepta **de forma definitiva** a los
+$q_c - |\text{ya aceptados por } c|$ mejores postulantes de la ronda según
+$\succ_c$, y rechaza al resto — sin reconsiderar nunca a nadie ya aceptado
+ni a nadie ya rechazado por $c$.
+
+**Proposición.** El matching de Boston $\mu^{B}$ no es, en general, estable:
+existen perfiles $(\succ_s), (\succ_c)$ tales que $\mu^B$ admite un par
+bloqueante. (El ejemplo por defecto del simulador es una instancia
+concreta de esto.)
+
+**Proposición (no strategy-proof).** Existen $s$, $\succ_s$, $\succ_s'$,
+$\succ_{-s}$ tales que:
+
+$$\mu^{B}(\succ_s', \succ_{-s})(s) \;\; \succ_s \;\; \mu^{B}(\succ_s, \succ_{-s})(s)$$
+
+Es decir: reportar una preferencia distinta de la verdadera puede darle a
+$s$ un resultado que $s$ mismo prefiere, evaluado según su preferencia
+real $\succ_s$ — la definición exacta de mecanismo manipulable.
